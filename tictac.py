@@ -19,14 +19,25 @@ def newFrame(gameCells):
 
 def ticTac():
     clear()
+    # Rules
     print("> Enter the cell number that you wish to select ")
     print(" 7 | 8 | 9 ")
     print("-----------")
     print(" 4 | 5 | 6 ")
     print("-----------")
     print(" 1 | 2 | 3 ")
-
+    # Create game positions
     gameCells = ["~","~","~","~","~","~","~","~","~"]
+
+    # Game logic:
+    while(True):
+        command = input("> ")
+        
+
+
+
+
+
     newFrame(gameCells)
 
 
