@@ -70,11 +70,11 @@ def ticTac():
     user = True
     # Rules
     print("> Enter the cell number that you wish to select(Note the first player is X)")
-    print(" 7 | 8 | 9 ")
+    print(" 1 | 2 | 3 ")
     print("-----------")
     print(" 4 | 5 | 6 ")
     print("-----------")
-    print(" 1 | 2 | 3 ")
+    print(" 7 | 8 | 9 ")
     # Create game positions
     gameCells = ["~","~","~","~","~","~","~","~","~"]
 
