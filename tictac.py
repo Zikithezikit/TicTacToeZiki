@@ -19,8 +19,6 @@ def validateInput(userInput):
 
 def newFrame(gameCells):
     clear()
-    print("-----------------")
-    print()
     for i in range(0,9):
         if i % 3 == 0 and i!=0:
             print()
@@ -34,6 +32,39 @@ def addToList(gameCells,user,number):
     else:
         gameCells[int(number)-1] = "O"        
 
+
+
+
+def checkForWin(gameCells):
+    # Rows
+    if(gameCells[0] != "~" and gameCells[0]==gameCells[1]==gameCells[2]):
+        return gameCells[0]
+    if(gameCells[3] != "~" and gameCells[3] == gameCells[4] == gameCells[5]):
+        return gameCells[3]
+    if(gameCells[6] != "~" and gameCells[6]== gameCells[7] == gameCells[8]):
+        return gameCells[6]
+    # Columns 
+    if(gameCells[0] != "~" and gameCells[0]==gameCells[3]==gameCells[6]):
+        return gameCells[0]
+    if(gameCells[1] != "~" and gameCells[1]==gameCells[4]==gameCells[7]):
+        return gameCells[1]
+    if(gameCells[2] != "~" and gameCells[2]==gameCells[5]==gameCells[8]):
+        return gameCells[2]
+    # Diagonals
+    if(gameCells[0] != "~" and gameCells[0]==gameCells[4]==gameCells[8]):
+        return gameCells[0]
+    if(gameCells[2] != "~" and gameCells[2]==gameCells[4]==gameCells[6]):
+        return gameCells[2]
+
+
+
+
+
+
+
+
+
+
 def ticTac():
     clear()
     user = True
@@ -45,22 +76,29 @@ def ticTac():
     print("-----------")
     print(" 1 | 2 | 3 ")
     # Create game positions
-    gameCells = ["1","2","3","4","5","6","7","8","9"]
+    gameCells = ["~","~","~","~","~","~","~","~","~"]
+
+
 
     # Game logic:
     while(True):
-        # command = input("> ")
-        # if(validateInput(command)):
-        #     if(gameCells[int(command)-1]=="~"):
-        #         addToList(gameCells,user,command)
-        #     else:
-        #         command = input("""> This cell is occupied select another
-        #                         > """)
-        # else:
-        #     command = input("""> This is not valid input please select a number between 1-9
-        #                     >  """)
+        if( checkForWin(gameCells) == "X" or checkForWin(gameCells) == "O"):
+            clear()
+            print(f"{checkForWin(gameCells)} is the winner")
+            break
+        print()
+        command = input("> ")
+        if(validateInput(command)):
+            if(gameCells[int(command)-1]=="~"):
+                addToList(gameCells,user,command)
+                user = not user
+            else:
+                command = input("""> This cell is occupied select another
+                                > """)
+        else:
+            command = input("""> This is not valid input please select a number between 1-9
+                            >  """)
         newFrame(gameCells)
-        break
 
 
 
@@ -73,5 +111,5 @@ def main():
     ticTac()
 
 
-
-main()
+if __name__ == "__main__":
+    main()
