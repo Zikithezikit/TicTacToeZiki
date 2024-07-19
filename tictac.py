@@ -17,6 +17,7 @@ def validateInput(userInput):
         return False
 
 
+# Creates a new frame
 def newFrame(gameCells):
     clear()
     for i in range(0,9):
@@ -25,6 +26,8 @@ def newFrame(gameCells):
             print("-----------------")
         print(f"| {gameCells[i]} |",end =" ")
 
+
+# Adds the correct x/o to the selected tile
 def addToList(gameCells,user,number):
 
     if(user):
@@ -34,7 +37,7 @@ def addToList(gameCells,user,number):
 
 
 
-
+# Checks for a win and returns the winner
 def checkForWin(gameCells):
     # Rows
     if(gameCells[0] != "~" and gameCells[0]==gameCells[1]==gameCells[2]):
@@ -57,14 +60,14 @@ def checkForWin(gameCells):
         return gameCells[2]
 
 
+    return "~"
 
 
 
 
 
 
-
-
+# The game logic
 def ticTac():
     clear()
     user = True
