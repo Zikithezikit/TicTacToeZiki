@@ -9,9 +9,9 @@ Clone the repository
 ```sh
 git clone https://github.com/Zikithezikit/TicTacToeZiki/blob/main/tictac.py
 ```
-
-Do it  👴 ⚡ 
+Run the program 
 ```sh
 python3 ./tictac.py
 ```
+Do it  👴 ⚡ 
 **Enjoy 😉**
